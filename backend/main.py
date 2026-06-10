@@ -3,8 +3,15 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
 import requests
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/test-llm")
 def test_llm():
@@ -23,6 +30,9 @@ def test_llm():
 class DiagnoseRequest(BaseModel):
     error_code: Optional[str] = None
     symptoms: Optional[str] = None
+class ChatRequest(BaseModel):
+    question: str
+    fault_data: dict
 
 @app.get("/")
 def home():
@@ -36,7 +46,39 @@ def get_faults():
 
     return data
 
+@app.post("/chat")
+def chat_with_ai(request: ChatRequest):
 
+    prompt = f"""
+You are an elevator maintenance expert.
+
+Current Fault Information:
+
+Error Code: {request.fault_data.get('error_code')}
+Cause: {request.fault_data.get('cause')}
+Severity: {request.fault_data.get('severity')}
+Repair Time: {request.fault_data.get('repair_time')}
+Solution: {request.fault_data.get('solution')}
+
+Technician Question:
+{request.question}
+
+Answer clearly and practically.
+Keep the answer under 150 words.
+"""
+
+    response = requests.post(
+        "http://localhost:11434/api/generate",
+        json={
+            "model": "llama3:8b",
+            "prompt": prompt,
+            "stream": False
+        }
+    )
+
+    return {
+        "answer": response.json()["response"]
+    }
 
 def generate_ai_report(fault):
 
@@ -50,21 +92,31 @@ Severity: {fault['severity']}
 Repair Time: {fault['repair_time']}
 Solution: {fault['solution']}
 
-Generate the response in EXACTLY this format:
+Generate a technician insight report.
 
-LIKELY CAUSE:
-<cause>
+IMPORTANT:
+- Do NOT repeat the cause.
+- Do NOT repeat the severity.
+- Do NOT repeat the repair time.
+- Do NOT repeat the solution.
+- Add new insights only.
 
-SEVERITY:
-<severity>
+Format:
 
-RECOMMENDED ACTION:
-<action>
+WHY IT HAPPENS:
+(Explain common reasons behind this fault)
 
-ESTIMATED REPAIR TIME:
-<time>
+RISKS IF IGNORED:
+(Potential consequences)
 
-Keep the total response under 100 words.
+STEP-BY-STEP INSPECTION:
+Provide 3-5 numbered steps.
+(What the technician should verify)
+
+PREVENTIVE MAINTENANCE:
+(How to avoid this fault in future)
+
+Keep it practical and under 120 words.
 """
 
     response = requests.post(
@@ -103,8 +155,13 @@ def diagnose_fault(request: DiagnoseRequest):
             score = 0
 
             for symptom in fault["symptoms"]:
-                if symptom.lower() in user_text:
-                    score += 1
+
+                symptom_words = symptom.lower().split()
+
+                for word in symptom_words:
+
+                    if word in user_text:
+                        score += 1
 
             if score > best_score:
                 best_score = score
