@@ -1,3 +1,5 @@
+
+  
 [
   {
     "error_code": "E101",
@@ -38,5 +40,293 @@
     "severity": "High",
     "repair_time": "1 hour",
     "solution": "Inspect door motor and wiring"
+  },
+  {
+    "error_code": "E101",
+    "symptoms": [
+      "elevator does not move",
+      "control panel unresponsive",
+      "floor buttons not lighting up"
+    ],
+    "cause": "Main control board failure",
+    "severity": "Critical",
+    "repair_time": "2-4 hours",
+    "solution": "Replace main control board and reconfigure system parameters"
+  },
+  {
+    "error_code": "E112",
+    "symptoms": [
+      "cabin lights flickering",
+      "intermittent power loss",
+      "display screen going blank"
+    ],
+    "cause": "Loose main power supply connection",
+    "severity": "High",
+    "repair_time": "30-60 mins",
+    "solution": "Inspect and reseat all power supply connections, replace faulty terminals"
+  },
+  {
+    "error_code": "E138",
+    "symptoms": [
+      "elevator stops between floors",
+      "alarm triggered",
+      "door refuses to open"
+    ],
+    "cause": "Safety circuit interruption",
+    "severity": "Critical",
+    "repair_time": "1-2 hours",
+    "solution": "Trace and reset safety circuit, inspect all safety relays and contacts"
+  },
+  {
+    "error_code": "E155",
+    "symptoms": [
+      "slow door opening speed",
+      "door motor making grinding noise"
+    ],
+    "cause": "Door motor brush wear",
+    "severity": "Medium",
+    "repair_time": "45-90 mins",
+    "solution": "Replace door motor brushes and lubricate drive mechanism"
+  },
+  {
+    "error_code": "E167",
+    "symptoms": [
+      "cabin overheats",
+      "motor cuts out after extended use",
+      "burning smell from machine room"
+    ],
+    "cause": "Machine room ventilation fan failure",
+    "severity": "High",
+    "repair_time": "30-60 mins",
+    "solution": "Replace ventilation fan unit and clean cooling vents"
+  },
+  {
+    "error_code": "E183",
+    "symptoms": [
+      "elevator overshoots floor level",
+      "rough landing at destination",
+      "passengers report jolting stop"
+    ],
+    "cause": "Landing sensor misalignment",
+    "severity": "High",
+    "repair_time": "1-2 hours",
+    "solution": "Realign landing sensors and recalibrate floor leveling parameters"
+  },
+  {
+    "error_code": "E196",
+    "symptoms": [
+      "door opens at wrong floor",
+      "floor indicator shows incorrect level"
+    ],
+    "cause": "Position encoder signal error",
+    "severity": "Critical",
+    "repair_time": "1-3 hours",
+    "solution": "Replace position encoder and perform full floor-by-floor calibration"
+  },
+  {
+    "error_code": "E210",
+    "symptoms": [
+      "elevator vibrates during travel",
+      "rattling noise in shaft",
+      "rough ride reported by passengers"
+    ],
+    "cause": "Guide rail lubrication failure",
+    "severity": "Medium",
+    "repair_time": "45-60 mins",
+    "solution": "Apply guide rail lubricant and inspect guide shoes for wear"
+  },
+  {
+    "error_code": "E227",
+    "symptoms": [
+      "load weighing alarm active",
+      "elevator refuses to depart with passengers inside"
+    ],
+    "cause": "Overload sensor miscalibration",
+    "severity": "Medium",
+    "repair_time": "30-45 mins",
+    "solution": "Recalibrate load cell sensor and reset overload threshold parameters"
+  },
+  {
+    "error_code": "E241",
+    "symptoms": [
+      "intermittent communication loss between floors",
+      "call buttons on certain floors unresponsive",
+      "floor display showing dashes"
+    ],
+    "cause": "CAN bus communication fault",
+    "severity": "High",
+    "repair_time": "1-2 hours",
+    "solution": "Inspect CAN bus wiring harness, replace damaged segments and verify termination resistors"
+  },
+  {
+    "error_code": "E253",
+    "symptoms": [
+      "emergency lighting activates during normal operation",
+      "battery backup unit beeping"
+    ],
+    "cause": "Emergency battery pack degradation",
+    "severity": "Medium",
+    "repair_time": "30-60 mins",
+    "solution": "Replace emergency battery pack and test backup power system"
+  },
+  {
+    "error_code": "E268",
+    "symptoms": [
+      "elevator descends slowly",
+      "hydraulic fluid visible on pit floor",
+      "cabin sinks between calls"
+    ],
+    "cause": "Hydraulic cylinder seal leak",
+    "severity": "Critical",
+    "repair_time": "2-4 hours",
+    "solution": "Replace hydraulic cylinder seals, top up hydraulic fluid and pressure-test system"
+  },
+  {
+    "error_code": "E279",
+    "symptoms": [
+      "door reopens immediately after closing",
+      "light curtain fault code active"
+    ],
+    "cause": "Infrared light curtain beam misalignment",
+    "severity": "Medium",
+    "repair_time": "20-40 mins",
+    "solution": "Realign light curtain transmitter and receiver units, clean sensor lens"
+  },
+  {
+    "error_code": "E291",
+    "symptoms": [
+      "traction motor humming loudly",
+      "slow acceleration on upward travel",
+      "motor temperature warning active"
+    ],
+    "cause": "Drive belt tension loss",
+    "severity": "High",
+    "repair_time": "1-2 hours",
+    "solution": "Inspect and retension drive belt, replace if elongation exceeds tolerance"
+  },
+  {
+    "error_code": "E305",
+    "symptoms": [
+      "pit flooding alarm triggered",
+      "elevator taken out of service automatically"
+    ],
+    "cause": "Pit water ingress detection",
+    "severity": "Critical",
+    "repair_time": "1-3 hours",
+    "solution": "Pump out pit, identify ingress source, seal entry points and test pit float switch"
+  },
+  {
+    "error_code": "E317",
+    "symptoms": [
+      "door closes but elevator does not depart",
+      "door lock feedback signal absent"
+    ],
+    "cause": "Door interlock contact failure",
+    "severity": "High",
+    "repair_time": "30-60 mins",
+    "solution": "Replace door interlock micro-switch and verify door lock circuit continuity"
+  },
+  {
+    "error_code": "E332",
+    "symptoms": [
+      "rope slippage warning active",
+      "elevator decelerates unexpectedly",
+      "traction sheave wear particles in pit"
+    ],
+    "cause": "Traction rope wear exceeding limit",
+    "severity": "Critical",
+    "repair_time": "3-4 hours",
+    "solution": "Replace full set of traction ropes and inspect sheave groove profile"
+  },
+  {
+    "error_code": "E348",
+    "symptoms": [
+      "speed governor trips during descent",
+      "safety gear engages on rail"
+    ],
+    "cause": "Overspeed governor calibration drift",
+    "severity": "Critical",
+    "repair_time": "2-3 hours",
+    "solution": "Recalibrate speed governor trip threshold and perform controlled overspeed test"
+  },
+  {
+    "error_code": "E361",
+    "symptoms": [
+      "floor buttons require multiple presses",
+      "call registration delayed"
+    ],
+    "cause": "Hall call button contact oxidation",
+    "severity": "Low",
+    "repair_time": "20-40 mins",
+    "solution": "Clean button contacts with contact cleaner or replace button module"
+  },
+  {
+    "error_code": "E374",
+    "symptoms": [
+      "cabin fan not operating",
+      "passengers report stuffiness",
+      "cabin temperature sensor fault active"
+    ],
+    "cause": "Cabin ventilation fan motor failure",
+    "severity": "Low",
+    "repair_time": "30-45 mins",
+    "solution": "Replace cabin fan motor unit and verify thermostat control circuit"
+  },
+  {
+    "error_code": "E389",
+    "symptoms": [
+      "floor display showing wrong number",
+      "erratic floor counting during travel"
+    ],
+    "cause": "Magnetic floor selector strip damage",
+    "severity": "Medium",
+    "repair_time": "45-90 mins",
+    "solution": "Replace damaged magnetic selector strips and re-teach floor positions to controller"
+  },
+  {
+    "error_code": "E402",
+    "symptoms": [
+      "elevator jerks at start of travel",
+      "drive inverter fault code present",
+      "motor current spike on departure"
+    ],
+    "cause": "Variable frequency drive parameter corruption",
+    "severity": "High",
+    "repair_time": "1-2 hours",
+    "solution": "Reload VFD factory parameters, retune motor control settings and perform test run"
+  },
+  {
+    "error_code": "E415",
+    "symptoms": [
+      "intercom call to operator failing",
+      "emergency call button LED not lit"
+    ],
+    "cause": "Emergency intercom power supply fault",
+    "severity": "High",
+    "repair_time": "30-60 mins",
+    "solution": "Replace intercom power supply unit and verify emergency communication line continuity"
+  },
+  {
+    "error_code": "E428",
+    "symptoms": [
+      "brake does not fully release on departure",
+      "motor straining sound on start",
+      "brake lining smell detected"
+    ],
+    "cause": "Electromagnetic brake coil resistance out of tolerance",
+    "severity": "High",
+    "repair_time": "1-2 hours",
+    "solution": "Replace brake coil assembly, adjust brake gap clearance to specification"
+  },
+  {
+    "error_code": "E441",
+    "symptoms": [
+      "counterweight buffer compression alarm",
+      "travel limited to upper floors only"
+    ],
+    "cause": "Counterweight buffer switch activation",
+    "severity": "Critical",
+    "repair_time": "2-3 hours",
+    "solution": "Inspect counterweight buffer for damage, reset limit switch and recalculate counterweight balance"
   }
 ]
